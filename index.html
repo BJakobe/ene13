@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ENE 13.05i-B Major Task 2</title>
+
+        <style>
+
+            @font-face{
+                font-family: avenir;
+                src: url("fonts/avenir.ttf");
+            }
+            @font-face{
+                font-family: madecanvas;
+                src: url("fonts/madecanvas.otf");
+            }
+
+            body{
+                background-color: #111111;
+                color: #dcdcdc;
+                font-family: avenir;
+            }
+            #letter{
+                display: none;
+                flex-direction: column;
+                justify-content: center;
+                align-items: left;
+                min-height: 100vh;
+                padding-left: 15%;
+                padding-right: 15%;
+                margin-bottom: 5%;
+            }
+            a{
+                text-decoration: underline;
+                color: #dcdcdc;
+                font-size: 2em;
+                width: 100%;
+                padding: 2%;
+                text-align: right;
+                font-family: madecanvas;
+                opacity: 0;
+            }
+            
+            h1{
+                font-size: 3em;
+                font-family: madecanvas;
+                text-align:center;
+            }
+            
+            p{
+                font-size: 1.2em;
+            }
+            
+            @media(max-width: 768px){
+                #letter{
+                    padding: 5% 10%;
+                }
+            }
+            
+        </style>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    </head>
+
+    <body>
+        <div id="letter" class="hidden">
+            
+            <h1>Ignorance Isn't Bliss</h1>
+
+            <p>As we all know, our country has been facing, and desperately fighting, the COVID-19 pandemic. We have all lost people, time, resources, and many other things. Some even say they’ve lost all hope of going back to normal.</p>
+
+            <p>Although these are really dark times, we hope you are still doing your best to help minimize the spread of the virus as much as you can. Staying at home, observing proper hygiene, keeping a clean and orderly environment, and wearing your mask (yes, even your face shield) <i>properly</i> and maintaining a 2-meter distance when interacting with others outside (only if it’s necessary please). But most importantly, <b>get vaccinated!</b></p>
+
+            <p>Yes, we are and we will keep talking about how important this is. Not just COVID vaccines, but also the many others that protect us from multiple diseases. It’s why we created this website in the first place. We want to show you different people’s experiences with the vaccine, or the lack of it, to help fight against vaccine hesitancy. Now, you might ask, “why stories?” Well, we believe people’s narratives are more personal, more real and more relatable. Maybe you can even see yourself in their shoes.</p>
+            
+            <p>Ok, enough talk. Are you ready to start?</p>
+
+
+            <a href="main.html">LET'S GO ></a>
+
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                setTimeout(function() {
+                    $('a').fadeTo(3500, 1);
+                }, 1500);
+                $('div#letter').fadeIn(3500).css('display', 'flex');
+
+            });
+        </script>
+        
+    </body>
+</html>

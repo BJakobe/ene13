@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ENE 13.05i-B Major Task 2</title>
+        
+        <script src="script.js"></script>
+        
+    </head>
+
+    <style>
+        
+        @font-face{
+            font-family: avenir;
+            src: url("fonts/avenir.ttf");
+        }
+        
+        @font-face{
+            font-family: madecanvas;
+            src: url("fonts/madecanvas.otf");
+        }
+        
+        body{
+            background-color: #111111;
+            color: #dcdcdc;
+            font-family: avenir;
+            min-height: 100vh;
+/*            min-height: calc(var(--vh, 1vh)*100);*/
+            margin: 0;
+            font-size: 1.2em;
+        }
+        
+        h1{
+            font-family: madecanvas;
+            font-size: 4em;
+            display: block;
+            text-align: center;
+            margin-top: 2%;
+            margin-bottom: 5%;
+            padding: 0 5%;
+        }
+        
+        #fact_one{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        
+        .prompts{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        .answer{
+            font-size: 1.5em;
+            padding: 20px 75px;
+            margin: 0 30px;
+            border: 1px solid #dcdcdc;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #dcdcdc;
+        }
+        
+        .answervaccine{
+            font-size: 1.2em;
+            padding: 15px 75px;
+            margin: 0 20px;
+            border: 1px solid #dcdcdc;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #dcdcdc;
+        }
+        
+        .buttondivvaccine{
+            margin-bottom: 3%;
+        }
+            
+        .answer:hover, .answervaccine:hover{
+            background-color: #cfcfcf;
+            color: #111111;
+            cursor: pointer;
+        }
+        
+        h2{
+            font-family: madecanvas;
+            font-size: 3em;
+        }
+        
+        .syringe{
+            height: 6.5%;
+        }
+        
+        .syringevaccine{
+            margin-top: 4%;
+            height: 50px;
+        }
+        
+        .facts{
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        
+        .hidden_facts{
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3%;
+/*            height: 100%;*/
+        }
+        
+        a{
+            color: #dcdcdc;
+        }
+        
+        .imagecontainer{
+            display: flex;
+            justify-content: space-around;
+/*            width: 50%;*/
+/*            padding: 35px;*/
+/*            border: 1px solid #dcdcdc;*/
+        }
+        
+        .imagecontainer img{
+            height: 400px;
+        }
+        
+        h3{
+            font-family: madecanvas;
+            font-size: 2.5em;
+            text-align: center;
+        }
+        
+        .right-align{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #dcdcdc;
+            border-radius: 3px;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .upper{
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .upper h3{
+            margin-top: 0;
+            margin-bottom: 3%;
+        }
+        
+        .left{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #dcdcdc;
+            border-radius: 3px;
+            padding: 25px;
+            margin-right: 5%;
+        }
+        
+        .right-align a{
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        
+        .right-align p{
+            font-size: 0.9em;
+        }
+        
+        .upleft{
+            float: left;
+        }
+        
+        .upright{
+            float: right;
+        }
+        
+        #get_help{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10%;
+            height: 100vh;
+        }
+    </style>
+    
+    <body>
+        <div id="fact_one">
+            
+            <div class="prompts" id="prompt_one">
+                
+                <img class="syringe" src="photos/syringe.png">
+                <h1>Do you think the vaccine will be ineffective?</h1>
+                
+                <div class="buttondiv">
+                    <a class="answer" onclick="response_1_negative()">Yes</a>
+                    <a class="answer"onclick="response_1_positive()">No</a>
+                </div>
+                
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_one_negative"> 
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                <div class="upper">
+                    <div class="left">
+                        <h3>They’re actually effective!</h3>
+
+                        <div class="imagecontainer">
+                            <img src="photos/1.png" style="margin-right: 10px">
+                            <img src="photos/1.5.jpg">
+                        </div>
+                    </div>
+
+                    <div class="right-align">
+                        <h3>Here are some facts to help you with your decision:</h3>
+                        <a href="https://www.who.int/news-room/feature-stories/detail/vaccine-efficacy-effectiveness-and-protection">Vaccine efficacy, effectiveness and protection</a>
+                        <p>All the currently approved vaccines by the World Health Organization are shown to be at least 50% effective against the targeted disease.</p>
+                        <a href="https://www.who.int/news-room/feature-stories/detail/how-are-vaccines-developed?gclid=CjwKCAjwmK6IBhBqEiwAocMc8r3LA-yDAnU6s05MQQc_rkuRZLh31daHrq2DL0nlVp-R9qZzg3WluhoCW3UQAvD_BwE">How are vaccines developed?</a>
+                        <p>Before a vaccine is approved for use, they have to go through and pass multiple phases. These phases guarantee that these vaccines are safe and more importantly, effective. It is also important to note that these phases are strict and rigorous in their testing stages.</p> 
+                    </div>
+                    
+                </div>
+                
+                <h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_one_no()">No</a>
+                </div>
+                
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_one_positive">  
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                <div class="upper">
+                    
+                    <div class="left">
+                <h3>That's right! They <i>are</i> effective!</h3>
+                
+                <div class="imagecontainer">
+                    <img src="photos/1.png" style="margin-right: 10px">
+                    <img src="photos/1.5.jpg">
+                </div>
+                    </div>
+                
+                    <div class="right-align">
+                <h3>Here are some stories you can share if you have anti-vaxxer friends:</h3>
+                <a href="https://www.who.int/news-room/feature-stories/detail/vaccine-efficacy-effectiveness-and-protection">Vaccine efficacy, effectiveness and protection</a>
+                        <p>All the currently approved vaccines by the World Health Organization are shown to be at least 50% effective against the targeted disease.</p>
+                        <a href="https://www.who.int/news-room/feature-stories/detail/how-are-vaccines-developed?gclid=CjwKCAjwmK6IBhBqEiwAocMc8r3LA-yDAnU6s05MQQc_rkuRZLh31daHrq2DL0nlVp-R9qZzg3WluhoCW3UQAvD_BwE">How are vaccines developed?</a>
+                        <p>Before a vaccine is approved for use, they have to go through and pass multiple phases. These phases guarantee that these vaccines are safe and more importantly, effective. It is also important to note that these phases are strict and rigorous in their testing stages.</p> 
+                    </div>
+                    
+                </div>
+                
+                <img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+               
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_one_no()">No</a>
+                </div>
+                
+            </div>
+            
+        </div>
+
+        <div class="facts" id="fact_two">
+            
+            <div class="prompts" id="prompt_two">
+                
+                <img class="syringe" src="photos/syringe.png">
+                <h1>Are you afraid you might regret getting vaccinated?</h1>
+                
+                <div class="buttondiv">
+                    <a class="answer" onclick="response_2_negative()">Yes</a>
+                    <a class="answer" onclick="response_2_positive()">No</a>
+                </div>
+                
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_two_negative">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                <div class="upper">
+                    
+                    <div class="left">
+                <h3 style="margin-bottom: 2%;">Don’t be!</h3>
+                        <p style="margin-top: 0;">Unfortunately, these two below had the same feelings as you but ended up really regretting...</p>
+                
+                        
+                        <div class="imagecontainer">
+                <img src="photos/2.jpg" style="margin-right: 10px">
+                <img src="photos/2.5.jpg">
+                        </div></div>
+                
+                    <div class="right-align">
+                <h3 style="margin-bottom: 10%;">You still have time! Here's a story to  help you with your decision:</h3>
+                <a href='https://www.usatoday.com/story/news/nation/2021/07/31/unvaccinated-las-vegas-man-died-regretting-not-getting-vaccine-fiance/5442240001/'>Unvaccinated Las Vegas man died regretting not getting vaccine: fiancee</a>
+                <p>TL;DR: The man wanted to wait for “like a year” to see the reactions of others to the vaccine. But while in the intensive care unit before his death, he expressed his regret of not getting the vaccine earlier. </p>
+                    </div>
+                </div>
+                <img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_two_no()">No</a>
+                </div>
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_two_positive">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                 <div class="upper">
+                     <div class="left">
+                <h3>You dodged a bullet!</h3>
+                
+                <div class="imagecontainer">
+                <img src="photos/2.jpg" style="margin-right: 10px">
+                    <img src="photos/2.5.jpg">
+                         </div>
+                     </div>
+                
+                     <div class="right-align">
+                         <h3>But not everyone were able to :(</h3>
+                         <p>Since we don’t want that happening as much as possible, help others by giving them more reasons to change their decision. Here's a compelling story:</p><br>
+                <a href='https://www.usatoday.com/story/news/nation/2021/07/31/unvaccinated-las-vegas-man-died-regretting-not-getting-vaccine-fiance/5442240001/'>Unvaccinated Las Vegas man died regretting not getting vaccine: fiancee</a>
+                <p>TL;DR: The man wanted to wait for “like a year” to see the reactions of others to the vaccine. But while in the intensive care unit before his death, he expressed his regret of not getting the vaccine earlier. </p>
+                     </div></div>
+                
+                <img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_two_no()">No</a>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="facts" id="fact_three">
+            
+            <div class="prompts" id="prompt_three">
+                
+                <img class="syringe" src="photos/syringe.png">
+                <h1>Are you doubting its ability to get rid of a widespread virus?</h1>
+                
+                <div class="buttondiv">
+                    <a class="answer" onclick="response_3_negative()">Yes</a>
+                    <a class="answer" onclick="response_3_positive()">No</a>
+                </div>
+                
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_three_negative">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                <div class="upper">
+                     <div class="left">
+                         
+                <h3 style="margin-bottom: 3%">Do you remember chickenpox?</h3>
+                         
+                <div class="imagecontainer">
+                <img src="photos/3.jpg" style="height: 250px">
+                         </div>
+                         
+                    </div>
+                    
+                    <div class="right-align">
+                <h3>The new generation of kids certainly don’t.</h3>
+                        <p style="margin-bottom: 5%;">That's the effect of vaccines! Here are facts to help you get rid of your doubt:</p>
+                <a href='https://www.mayoclinic.org/diseases-conditions/coronavirus/in-depth/herd-immunity-and-coronavirus/art-20486808#:~:text=Herd%20immunity%20also%20can%20be,causing%20illness%20or%20resulting%20complications.'>Herd immunity and COVID-19 (coronavirus): What you need to know - Mayo Clinic</a>
+                <p>“Herd immunity also can be reached when enough people have been vaccinated against a disease and have developed protective antibodies against future infection.”</p>
+                
+                    </div></div>
+                <img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_three_no()">No</a>
+                </div>
+                
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_three_positive">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                <div class="upper">
+                     <div class="left">
+                         
+                <h3 style="margin-bottom: 3%">Chickenpox who?</h3>
+                
+                <div class="imagecontainer">
+                <img src="photos/3.jpg" style="height: 250px">
+                </div></div>
+                    
+                    <div class="right-align">
+                <h3 style="margin-bottom: 3%;">Hopefully soon, COVID will also be a thing of the past.</h3>
+                    
+                    <p>We were able to do this because of the vaccines against these diseases. Hopefully, others understand this too. Luckily, you can help them understand by sharing this:</p>
+                <a href='https://www.mayoclinic.org/diseases-conditions/coronavirus/in-depth/herd-immunity-and-coronavirus/art-20486808#:~:text=Herd%20immunity%20also%20can%20be,causing%20illness%20or%20resulting%20complications.'>Herd immunity and COVID-19 (coronavirus): What you need to know - Mayo Clinic</a>
+                <p>“Herd immunity also can be reached when enough people have been vaccinated against a disease and have developed protective antibodies against future infection.”</p>
+                
+                    </div></div>
+                <img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_three_no()">No</a>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="facts" id="fact_four">
+            
+            <div class="prompts" id="prompt_four">
+                
+                <img class="syringe" src="photos/syringe.png">
+                <h1>Do you believe it's all just part of God's plan if you get COVID?</h1>
+                
+                <div class="buttondiv">
+                    <a class="answer" onclick="response_4_negative()">Yes</a>
+                    <a class="answer" onclick="response_4_positive()">No</a>
+                </div>
+                
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_four_negative">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                <div class="upper">
+                     <div class="left">
+                         
+                <h3>Please don’t be like Stephen.</h3>
+                         
+                <div class="imagecontainer">
+                <img src="photos/4.png">
+                         </div></div>
+                    
+                    
+                    <div class="right-align">
+                        <h3><i>Nasa tao ang gawa, nasa Diyos ang awa.</i></h3> 
+                <p>While it’s good to be faithful, it is not bad to also trust in science and facts. Even our religious leaders do so:</p>
+                <a href='https://reliefweb.int/report/world/world-religious-leaders-call-massive-increases-production-covid-vaccines-and-end'>World religious leaders call for massive increases in production of Covid vaccines and end to vaccine nationalism - World | ReliefWeb</a>
+                <p>“Some world religious leaders are even urging for the increase of Covid vaccines.”</p>
+                
+                    </div></div>
+                <img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_four_no()">No</a>
+                </div>
+                
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_four_positive">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                <div class="upper">
+                     <div class="left">
+                         
+                <h3>Sadly, Stephen did.</h3>
+                         
+                <div class="imagecontainer">
+                <img src="photos/4.png">
+                         </div></div>
+                         
+                         
+                    <div class="right-align">
+                        <h3>Help others see beyond blind faith.</h3>
+                <p>Unfortunately, Stephen is just one of those with similar cases. You can spread the word to your brothers & sisters that even our religious leaders take precaution:</p>
+                <a href='https://reliefweb.int/report/world/world-religious-leaders-call-massive-increases-production-covid-vaccines-and-end'>World religious leaders call for massive increases in production of Covid vaccines and end to vaccine nationalism - World | ReliefWeb</a>
+                <p>“Some world religious leaders are even urging for the increase of Covid vaccines.”</p>
+                
+                    </div></div>
+                <img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_four_no()">No</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="facts" id="fact_five">
+            
+            <div class="prompts" id="prompt_five">
+                
+                <img class="syringe" src="photos/syringe.png">
+                <h1>Are you afraid there might be "microchips and trackers" in the vaccine?</h1>
+                
+                <div class="buttondiv">
+                    <a class="answer" onclick="response_5_negative()">Yes</a>
+                    <a class="answer" onclick="response_5_positive()">No</a>
+                </div>
+                
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_five_negative">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                <div class="upper">
+                     <div class="left">
+                         
+                <h3>Is that even possible and worth it?</h3>
+                
+                <div class="imagecontainer" style="flex-direction: column;">
+                <img src="photos/5.jpg">
+                         </div></div>
+                
+                    <div class="right-align">
+                <h2>Jokes aside, here's a fact about it:</h2>
+                <a href='https://www.factcheck.org/2020/12/covid-19-vaccines-dont-have-patient-tracking-devices/'>COVID-19 Vaccines Don't Have Patient-Tracking Devices - FactCheck.org</a>
+                <p>“It’s unclear how that would even work, though, since the RFID tag is attached to the vial and can’t be injected into a patient. Steven Hofman, spokesman for ApiJect, told us in an interview that the idea of the RFID tags being used to track individuals is beyond fantasy.”</p>
+                
+                    </div></div>
+                <img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_five_no()">No</a>
+                </div>
+                
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_five_positive">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                 <div class="upper">
+                     <div class="left">
+                <h3>Right? Is that even possible and worth it?</h3>
+                
+                <div class="imagecontainer" style="flex-direction: column;">
+                <img src="photos/5.jpg">
+                         </div></div>
+                
+                    <div class="right-align">
+                        <h3>Sadly, some people believe so.</h3> 
+                        <p>Perhaps you can help them see the unlikelihood of this happening by showing them this:</p>
+                <a href='https://www.factcheck.org/2020/12/covid-19-vaccines-dont-have-patient-tracking-devices/'>COVID-19 Vaccines Don't Have Patient-Tracking Devices</a>
+                <p>“It’s unclear how that would even work, though, since the RFID tag is attached to the vial and can’t be injected into a patient. Steven Hofman, spokesman for ApiJect, told us in an interview that the idea of the RFID tags being used to track individuals is beyond fantasy.”</p>
+                
+                     </div></div>
+                     <img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_five_no()">No</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="facts" id="fact_six">
+            
+            <div class="prompts" id="prompt_six">
+                
+                <img class="syringe" src="photos/syringe.png">
+                <h1>Are you biased against China-made vaccines?</h1>
+                
+                <div class="buttondiv">
+                    <a class="answer" onclick="response_6_negative()">Yes</a>
+                    <a class="answer" onclick="response_6_positive()">No</a>
+                </div>
+                
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_six_negative">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                <div class="upper">
+                     <div class="left" style="width: 120%;">
+                <h3>How about those "Made in China" phones...?</h3>
+                
+                         <div class="imagecontainer">
+                <img src="photos/6.jpg" style="width: 250px; height: auto">
+                    </div></div>
+                
+                    <div class="right-align">
+                <h3>Jokes aside, Chinese-made vaccines are all good!</h3>
+                <a href='https://www.who.int/news-room/feature-stories/detail/the-sinovac-covid-19-vaccine-what-you-need-to-know#:~:text=Is%20it%20safe%3F,of%20participants%20in%20clinical%20trials).'>The Sinovac COVID-19 vaccine: What you need to know</a>
+                <p>“SAGE has thoroughly assessed the data on quality, safety and efficacy of the (sinovac) vaccine and has recommended its use for people aged 18 and above.”</p>
+                <p>Additionally, according to the, vaccines are not comparable as they take different approaches in designing the vaccines. But more importantly, all vaccines approved by the WHO are still proven to be highly effective in preventing severe disease due to COVID-19.</p>
+                <p>According to WHO, all approved Covid-19 vaccines are effective in severely reducing the mortality rate against the coronavirus.</p>
+                
+                    </div></div>
+                         <img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_six_no()">No</a>
+                </div>
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_six_positive">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                <div class="upper">
+                     <div class="left" style="width: 120%;">
+                         
+                <h3>Great! We love an unbiased citizen!</h3>
+                
+                         <div class="imagecontainer">
+                <img src="photos/6.jpg" style="width: 250px; height: auto">
+                         </div></div>
+                    
+                    <div class="right-align">
+                <h3>Jokes aside, here's something to share with your sinophobic friends:</h3>
+                <a href='https://www.who.int/news-room/feature-stories/detail/the-sinovac-covid-19-vaccine-what-you-need-to-know#:~:text=Is%20it%20safe%3F,of%20participants%20in%20clinical%20trials).'>The Sinovac COVID-19 vaccine: What you need to know</a>
+                <p>“SAGE has thoroughly assessed the data on quality, safety and efficacy of the (sinovac) vaccine and has recommended its use for people aged 18 and above.”</p>
+                <p>Additionally, according to the, vaccines are not comparable as they take different approaches in designing the vaccines. But more importantly, all vaccines approved by the WHO are still proven to be highly effective in preventing severe disease due to COVID-19.</p>
+                <p>According to WHO, all approved Covid-19 vaccines are effective in severely reducing the mortality rate against the coronavirus.</p>
+                
+                    </div></div>
+                         <img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_six_no()">No</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="facts" id="fact_seven">
+            
+            <div class="prompts" id="prompt_seven">
+                
+                <img class="syringe" src="photos/syringe.png">
+                <h1>Do you think the vaccines will be expensive?</h1>
+                
+                <div class="buttondiv">
+                    <a class="answer" onclick="response_7_negative()">Yes</a>
+                    <a class="answer" onclick="response_7_positive()">No</a>
+                </div>
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_seven_negative">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                <div class="upper">
+                     <div class="left">
+                <h3>It’s Free!!!</h3>
+                
+                         <div class="imagecontainer">
+                <img src="photos/7.jpg" style="height: 350px;">
+                         </div></div>
+                
+                    <div class="right-align">
+                <h3>What a steal!</h3>
+                <a href='https://doh.gov.ph/faqs/vaccines'>FAQs: Vaccines | Department of Health website</a>
+                <p>COVID Vaccines for priority groups are to be shouldered entirely by the government. Additionally, all available COVID vaccines are currently being administered for free. All you need to do is to sign up in your local LGU depending on the Department of Health priority list and wait for your schedule.</p>
+                
+                    </div></div>
+                         <img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_seven_no()">No</a>
+                </div>
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_seven_positive">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                <div class="upper">
+                     <div class="left">
+                <h1>So what are you waiting for?</h1>
+                
+                <div class="imagecontainer">
+                <img src="photos/7.jpg" style="height: 350px;">
+                         </div></div>
+                
+                    <div class="right-align">
+                        <h3>There’s still budget to get some milk tea after...</h3>
+                <a href='https://doh.gov.ph/faqs/vaccines'>FAQs: Vaccines | Department of Health website</a>
+                <p>COVID Vaccines for priority groups are to be shouldered entirely by the government. Additionally, all available COVID vaccines are currently being administered for free. All you need to do is to sign up in your local LGU depending on the Department of Health priority list and wait for your schedule.</p>
+                
+                    </div></div>
+                <img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_seven_no()">No</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="facts" id="fact_eight">
+            
+            <div class="prompts" id="prompt_eight">
+                
+                <img class="syringe" src="photos/syringe.png">
+                <h1>Do you think the vaccine might not be safe? Not sure what’s in the vaccine?</h1>
+                
+                <div class="buttondiv">
+                    <a class="answer" onclick="response_8_negative()">Yes</a>
+                    <a class="answer" onclick="response_8_positive()">No</a>
+                </div>
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_eight_negative">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                <div class="upper">
+                     <div class="left">
+                         <h3>Our scientists made sure they are!</h3>
+                <p>Thankfully, they have been working hard all around the world to study the virus and prevent it from causing deaths and hospitalization.</p>
+                         
+                <div class="imagecontainer">
+                <img src="photos/8.jpg" style="height: 350px;">
+                         </div></div>
+                
+                    <div class="right-align">
+                <h2>Here's some quick facts on vaccines:</h2>
+                <a href='https://www.who.int/news-room/q-a-detail/vaccines-and-immunization-what-is-vaccination?topicsurvey=v8kj13)&gclid=CjwKCAjwmK6IBhBqEiwAocMc8mUu-46-kJjbEU16hzII_ZgUZuvQ6Y3Gc_TXeVpdYlb3rmiFncxf2RoCDVcQAvD_BwE'>Vaccines and immunization: What is vaccination?</a>
+                <p>“Any licensed vaccine is rigorously tested across multiple phases of trials before it is approved for use, and regularly reassessed once it is introduced. Scientists are also constantly monitoring information from several sources for any sign that a vaccine may cause health risks.”</p>
+                        <a href='https://www.uchealth.com/en/media-room/covid-19/a-comprehensive-list-of-all-covid-19-vaccine-ingredients'>A Comprehensive List of All COVID-19 Vaccine Ingredients</a>
+                <p>This is a list of the ingredients of almost all COVID-19 Vaccines. All of the ingredients are just a search away!</p>
+                
+                    </div></div>
+                         <img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_eight_no()">No</a>
+                </div>
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_eight_positive">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                <div class="upper">
+                     <div class="left">
+                         
+                <h3>Looks like you’ve done your research!</h3>
+                
+                
+                <div class="imagecontainer">
+                <img src="photos/8.jpg" style="height: 350px;">
+                         </div></div>
+                
+                    <div class="right-align">
+                <h3>You know the drill!</h3>
+                <a href='https://www.who.int/news-room/q-a-detail/vaccines-and-immunization-what-is-vaccination?topicsurvey=v8kj13)&gclid=CjwKCAjwmK6IBhBqEiwAocMc8mUu-46-kJjbEU16hzII_ZgUZuvQ6Y3Gc_TXeVpdYlb3rmiFncxf2RoCDVcQAvD_BwE'>Vaccines and immunization: What is vaccination?</a>
+                <p>“Any licensed vaccine is rigorously tested across multiple phases of trials before it is approved for use, and regularly reassessed once it is introduced. Scientists are also constantly monitoring information from several sources for any sign that a vaccine may cause health risks.”</p>
+                    </div></div>
+                        
+                        <img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_eight_no()">No</a>
+                </div>
+            </div>
+        </div>
+
+<!--
+        <div class="facts" id="fact_nine">
+            
+            <div class="prompts" id="prompt_nine">
+                
+                <img class="syringe" src="photos/syringe.png">
+                <h1>Do you think the vaccine is made of harmful components?</h1>
+                
+                <div class="buttondiv">
+                    <a class="answer" onclick="response_9_negative()">Yes</a>
+                    <a class="answer" onclick="response_9_positive()">No</a>
+                </div>
+            </div>
+            
+            
+            <div class="hidden_facts" id="show_fact_nine_negative">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                
+                <h1>All components of the vaccine have been reviewed and tested to be safe according to the requirements set by WHO. Luckily for you, all ingredients of vaccines are readily available online!</h1>
+                <img src="photos/9.jpg">
+                <h2>While the tweets are just jokes, getting infected by covid is not a joke. Here’s more serious facts about the vaccine ingredients:</h2>
+                <a href='https://www.uchealth.com/en/media-room/covid-19/a-comprehensive-list-of-all-covid-19-vaccine-ingredients'>A Comprehensive List of All COVID-19 Vaccine Ingredients (uchealth.com)</a>
+                <p>This is a list of the ingredients of almost all Covid-19 Vaccines</p>
+                
+                <br><img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_nine_no()">No</a>
+                </div>
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_nine_positive">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                <h1>You’re right! All components of the vaccine have been reviewed and tested to be safe!</h1>
+                <img src="photos/9.jpg">
+                <h2>Hopefully we can show those with these fears that there are no harmful components in the vaccines with the help of these resources:</h2>
+                <a href='https://www.uchealth.com/en/media-room/covid-19/a-comprehensive-list-of-all-covid-19-vaccine-ingredients'>A Comprehensive List of All COVID-19 Vaccine Ingredients (uchealth.com)</a>
+                <p>This is a list of the ingredients of almost all Covid-19 Vaccines</p>
+                
+                <br><img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_nine_no()">No</a>
+                </div>
+            </div>
+        </div>
+-->
+
+        <div class="facts" id="fact_ten">
+            
+            <div class="prompts" id="prompt_ten">
+                
+                <img class="syringe" src="photos/syringe.png">
+                <h1>Think other "medicines" are better?</h1>
+                
+                <div class="buttondiv">
+                    <a class="answer" onclick="response_10_negative()">Yes</a>
+                    <a class="answer" onclick="response_10_positive()">No</a>
+                </div>
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_ten_negative">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                <div class="upper">
+                     <div class="left">
+                
+                <h3>Please be careful with “alternative meds”...</h3>
+                         
+                <div class="imagecontainer" style="flex-direction: column;">
+                <img src="photos/10.jpg" style="height: 150px; margin-bottom: 1.5%">
+                <img src="photos/10.5.jpg">
+                         </div></div>
+                         
+                    <div class="right-align">
+                <h3>They could actually do you worse.</h3>
+                <a href='https://www.nature.com/articles/d41586-020-01695-w'>High-profile coronavirus retractions raise concerns about data oversight</a>
+                <p>There are countless studies regarding “other” medicines such as Ivermectin being not only ineffective against the COVID-19, but also harmful for our health. In fact, multiple studies trying to show lessened COVID-19 mortality of alternate medicines have been retracted due to invalid data sources, or the author just not “feeling confident” about his study.</p>
+                
+                    </div></div>
+                <img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_ten_no()">No</a>
+                </div>
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_ten_positive">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                <div class="upper">
+                     <div class="left">
+                <h3>You’re right! Always better to trust in approved meds.</h3>
+                
+                <div class="imagecontainer" style="flex-direction: column;">
+                <img src="photos/10.jpg" style="height: 150px; margin-bottom: 1.5%">
+                <img src="photos/10.5.jpg">
+                         </div></div>
+                
+                    <div class="right-align">
+                <h3>Here’s something to combat the fake news!</h3>
+                <a href='https://www.nature.com/articles/d41586-020-01695-w'>High-profile coronavirus retractions raise concerns about data oversight</a>
+                <p>There are countless studies regarding “Other” medicines such as Ivermectin being not only ineffective against the COVID-19, but also harmful for our health. In fact, multiple studies trying to show lessened COVID-19 mortality of alternate medicines have been retracted due to invalid data sources, or the author just not “feeling confident” about his study.</p>
+                
+                    </div></div>
+                <img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_ten_no()">No</a>
+                </div>
+            </div>
+        </div>
+
+<!--
+        <div class="facts" id="fact_eleven">
+            
+            <div class="prompts" id="prompt_eleven">
+                
+                <img class="syringe" src="photos/syringe.png">
+                <h1>Not your preferred brand?</h1>
+                
+                <div class="buttondiv">
+                    <a class="answer" onclick="response_11_negative()">Yes</a>
+                    <a class="answer" onclick="response_11_positive()">No</a>
+                </div>
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_eleven_negative">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                
+                <h1>“The best vaccine is any vaccine”</h1>
+                <img src="photos/11.jpg">
+                <img src="photos/11.5.jpg">
+                <h2>You’re right, Justin! This is indeed an emergency. And it is important for you to know that any protection is better than none at all. Here are a few more resources to look at if you’re still waiting for the “glorified” vaccine brand to be available to you:</h2>
+                <a href='https://www.who.int/news-room/feature-stories/detail/the-sinovac-covid-19-vaccine-what-you-need-to-know?gclid=Cj0KCQjwu7OIBhCsARIsALxCUaOZU3TX3t1qgOO7D5wE69BaswvODFNrBWToLk4xrJA-nw4sMH1zSUMaAnjREALw_wcB'>The Sinovac COVID-19 vaccine: What you need to know (who.int)</a>
+                <p>According to W.H.O., all approved Covid-19 vaccines are effective in severely reducing the mortality rate against the coronavirus.</p>
+               
+                <br><img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_eleven_no()">No</a>
+                </div>
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_eleven_positive">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                
+                <h1>“The best vaccine is any vaccine”</h1>
+                <img src="photos/11.jpg">
+                <img src="photos/11.5.jpg">
+                <h2>You’re right, Justin! This is indeed an emergency. Hopefully other people hesitant about the brands also understand that any protection is better than none at all. Here are a few more resources to look at:</h2>
+                <a href='https://www.who.int/news-room/feature-stories/detail/the-sinovac-covid-19-vaccine-what-you-need-to-know?gclid=Cj0KCQjwu7OIBhCsARIsALxCUaOZU3TX3t1qgOO7D5wE69BaswvODFNrBWToLk4xrJA-nw4sMH1zSUMaAnjREALw_wcB'>The Sinovac COVID-19 vaccine: What you need to know (who.int)</a>
+                <p>According to W.H.O., all approved Covid-19 vaccines are effective in severely reducing the mortality rate against the coronavirus.</p>
+                
+                <br><img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_eleven_no()">No</a>
+                </div>
+            </div>
+        </div>
+-->
+
+<!--
+        <div class="facts" id="fact_twelve">
+            
+            <div class="prompts" id="prompt_twelve">
+                
+                <img class="syringe" src="photos/syringe.png">
+                <h1>Not sure what’s in the vaccine?</h1>
+                
+                <div class="buttondiv">
+                    <a class="answer" onclick="response_12_negative()">Yes</a>
+                    <a class="answer" onclick="response_12_positive()">No</a>
+                </div>
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_twelve_negative">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                
+                <h1>All ingredients of every vaccine are just a search away.</h1>
+                <img src="photos/12.jpg">
+                <img src="photos/12.2.jpg">
+                <h2>On a more serious note, here are reliable sources to look at to help you with your decision:</h2>
+                <a href='https://www.who.int/news-room/q-a-detail/vaccines-and-immunization-what-is-vaccination?topicsurvey=v8kj13)&gclid=CjwKCAjwmK6IBhBqEiwAocMc8mUu-46-kJjbEU16hzII_ZgUZuvQ6Y3Gc_TXeVpdYlb3rmiFncxf2RoCDVcQAvD_BwE'>Vaccines and immunization: What is vaccination? (who.int)</a>
+                <p>“Any licensed vaccine is rigorously tested across multiple phases of trials before it is approved for use, and regularly reassessed once it is introduced. Scientists are also constantly monitoring information from several sources for any sign that a vaccine may cause health risks.”</p>
+                
+                <br><img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_twelve_no()">No</a>
+                </div>
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_twelve_positive">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                
+                <h1>That’s good! Doing proper research!!</h1>
+                <img src="photos/12.jpg">
+                <img src="photos/12.2.jpg">
+                <h2>While it seems funny, many people still worry about this. Luckily, we have the chance to show them factual data to help ease their fears. Here are a few resources to look at:</h2>
+                <a href='https://www.who.int/news-room/q-a-detail/vaccines-and-immunization-what-is-vaccination?topicsurvey=v8kj13)&gclid=CjwKCAjwmK6IBhBqEiwAocMc8mUu-46-kJjbEU16hzII_ZgUZuvQ6Y3Gc_TXeVpdYlb3rmiFncxf2RoCDVcQAvD_BwE'>Vaccines and immunization: What is vaccination? (who.int)</a>
+                <p>“Any licensed vaccine is rigorously tested across multiple phases of trials before it is approved for use, and regularly reassessed once it is introduced. Scientists are also constantly monitoring information from several sources for any sign that a vaccine may cause health risks.”</p>
+                
+                <br><img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_twelve_no()">No</a>
+                </div>
+            </div>
+        </div>
+-->
+
+        <div class="facts" id="fact_thirteen">
+            
+            <div class="prompts" id="prompt_thirteen">
+                
+                <img class="syringe" src="photos/syringe.png">
+                <h1>Think it was developed too fast?</h1>
+                
+                <div class="buttondiv">
+                    <a class="answer" onclick="response_13_negative()">Yes</a>
+                    <a class="answer" onclick="response_13_positive()">No</a>
+                </div>
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_thirteen_negative">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                <div class="upper">
+                     <div class="left" style="width: 120%;">
+                
+                <h3>It did seem fast! But no shortcuts were taken.</h3>
+                         
+                <div class="imagecontainer">
+                <img src="photos/13.jpg">
+                         </div></div>
+                    
+                    <div class="right-align">
+                        <h3>Thankfully, our scientists know how to learn from history.</h3>
+                <p>Like what the tweets say, scientists have been preparing for potential disease outbreaks for decades and to learn more about the process. Here's something to learn from:</p>
+                <a href='https://www.who.int/news-room/feature-stories/detail/how-are-vaccines-developed?gclid=CjwKCAjwmK6IBhBqEiwAocMc8r3LA-yDAnU6s05MQQc_rkuRZLh31daHrq2DL0nlVp-R9qZzg3WluhoCW3UQAvD_BwE'>How are vaccines developed?</a>
+                <p>Before a vaccine is approved for use, they have to go through and pass multiple phases. These phases guarantee that these vaccines are safe and more importantly, effective. It is also important to note that these phases are strict and rigorous in their testing stages.</p>
+                
+                    </div></div>
+                <img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_thirteen_no()">No</a>
+                </div>
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_thirteen_positive">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                <div class="upper">
+                     <div class="left" style="width: 120%;">
+                         
+                <h3>Thankfully, it finally arrived, right?!</h3>
+                         
+                <div class="imagecontainer">
+                <img src="photos/13.jpg">
+                         </div></div>
+                    
+                    <div class="right-align">
+                        <h3>Humans really are a wonder!</h3>
+                        <p>Thanks to these intelligent people, we are able to enjoy the technology and medicine we have today. Here's something to let you know the processes vaccine-making goes through:</p>
+                <a href='https://www.who.int/news-room/feature-stories/detail/how-are-vaccines-developed?gclid=CjwKCAjwmK6IBhBqEiwAocMc8r3LA-yDAnU6s05MQQc_rkuRZLh31daHrq2DL0nlVp-R9qZzg3WluhoCW3UQAvD_BwE'>How are vaccines developed?</a>
+                <p>Before a vaccine is approved for use, they have to go through and pass multiple phases. These phases guarantee that these vaccines are safe and more importantly, effective. It is also important to note that these phases are strict and rigorous in their testing stages.</p>
+                
+                    </div></div>
+                <img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_thirteen_no()">No</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="facts" id="fact_fourteen">
+            
+            <div class="prompts" id="prompt_fourteen">
+                
+                <img class="syringe" src="photos/syringe.png">
+                <h1>Are you hesitant because of the Dengvaxia scare?</h1>
+                
+                <div class="buttondiv">
+                    <a class="answer" onclick="response_14_negative()">Yes</a>
+                    <a class="answer" onclick="response_14_positive()">No</a>
+                </div>
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_fourteen_negative">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                
+                <div class="upper">
+                     <div class="left" style="width: 135%;">
+                         
+                <h3>These two cases are actually very different!</h3>
+                         
+                <div class="imagecontainer">
+                <img src="photos/14.jpg">
+                         </div></div>
+                    
+                    <div class="right-align">
+                <h2>Here's a side-by-side comparison:</h2>
+                <a href='https://opinion.inquirer.net/138350/covid-19-and-dengvaxia-vaccinations-compared'>COVID-19 and Dengvaxia vaccinations compared</a>
+                <p>Unlike the COVID vaccines, the Dengvaxia vaccination programs were rushed with respect to the (lack of) knowledge and information about who could receive Dengvaxia. This is very different from all covid vaccines currently approved by the World Health Organization, as all instructions and precautions are being followed by the government units.</p>
+                
+                    </div></div>
+                <img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_fourteen_no()">No</a>
+                </div>
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_fourteen_positive">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                <div class="upper">
+                     <div class="left" style="width: 135%;">
+                         
+                <h3>Yup! Nothing to be afraid of here!</h3>
+                         
+                <div class="imagecontainer">
+                <img src="photos/14.jpg">
+                         </div></div>
+                    
+                    <div class="right-align">
+                <h2>Here's a side-by-side comparison:</h2>
+                <a href='https://opinion.inquirer.net/138350/covid-19-and-dengvaxia-vaccinations-compared'>COVID-19 and Dengvaxia vaccinations compared</a>
+                <p>Unlike the COVID vaccines, the Dengvaxia vaccination programs were rushed with respect to the (lack of) knowledge and information about who could receive Dengvaxia. This is very different from all covid vaccines currently approved by the World Health Organization, as all instructions and precautions are being followed by the government units.</p>
+                
+                    </div></div><img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_fourteen_no()">No</a>
+                </div>
+            </div>
+        </div>
+
+<!--
+        <div class="facts" id="fact_fifteen">
+            
+            <div class="prompts" id="prompt_fifteen">
+                
+                <img class="syringe" src="photos/syringe.png">
+                <h1>Are you hesitant because you don’t know how the vaccine works?</h1>
+                
+                <div class="buttondiv">
+                    <a class="answer" onclick="response_15_negative()">Yes</a>
+                    <a class="answer" onclick="response_15_positive()">No</a>
+                </div>
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_fifteen_negative">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                
+                <h1>Here’s a quick snippet:</h1>
+                <img src="photos/15.jpg">
+                <h2>If you want to learn more (you’re on the right track!), here are some resources and more complete explanations:</h2>
+                <a href='https://www.gavi.org/vaccineswork/there-are-four-types-covid-19-vaccines-heres-how-they-work?gclid=Cj0KCQjwu7OIBhCsARIsALxCUaPKL2xJLtJbDmakI_QrWBVPEs8ZYWGpBeZ4L43bBQA9PFquWKM_jcMaAqMbEALw_wcB'>There are four types of COVID-19 vaccines: here’s how they work</a>
+                <p>""</p>
+                
+                <br><img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_fifteen_no()">No</a>
+                </div>
+            </div>
+            
+            <div class="hidden_facts" id="show_fact_fifteen_positive">
+                <div style="width: 100%; margin-bottom: 1.5%;"><span class="upleft">ENE13.05i-B Major Task 2</span> <span class="upright">Bernardo, Divinagracia, Go, Gonzales</span></div>
+                
+                <h1>Fellow intellectual!!</h1>
+                <img src="photos/15.jpg">
+                <h2>Here are more resources, just for fun :D</h2>
+                <a href='https://www.gavi.org/vaccineswork/there-are-four-types-covid-19-vaccines-heres-how-they-work?gclid=Cj0KCQjwu7OIBhCsARIsALxCUaPKL2xJLtJbDmakI_QrWBVPEs8ZYWGpBeZ4L43bBQA9PFquWKM_jcMaAqMbEALw_wcB'>There are four types of COVID-19 vaccines: here’s how they work</a>
+                
+                <br><img class="syringevaccine" src="photos/syringe.png"><h2>Are you now willing to get vaccinated?</h2>
+                
+                <div class="buttondivvaccine">
+                    <a class="answervaccine" href="yes.html">Yes</a>
+                    <a class="answervaccine" onclick="response_fifteen_no()">No</a>
+                </div>
+            </div>
+        </div>
+-->
+
+        <div class="facts" id="get_help">
+            <h1>Please get help.<br>Call 02-894-COVID.</h1>
+            <a href="index.html"><u>Try Again</u></a>
+        </div>
+
+    </body>
+
+</html>

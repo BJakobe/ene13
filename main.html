@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ENE 13.05i-B Major Task 2</title>
+
+        <style>
+
+            @font-face{
+                font-family: avenir;
+                src: url("fonts/avenir.ttf");
+            }
+            @font-face{
+                font-family: madecanvas;
+                src: url("fonts/madecanvas.otf");
+            }
+
+            body{
+                background-color: #111111;
+                color: #dcdcdc;
+                font-family: avenir;
+                height: 100vh;
+                height: calc(var(--vh, 1vh)*100);
+                margin: 0;
+                font-size: 1.2em;
+            }
+            
+            h1{
+                font-family: madecanvas;
+                font-size: 5em;
+                display: block;
+                padding: 10px 50px;
+                text-align: center;
+                margin: 3% 0;
+            }
+            
+            
+            h2{
+                font-family: madecanvas;
+                font-size: 2.15em;
+            }
+            
+            #card{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+            }
+            
+            .buttons{
+                font-size: 1.5em;
+                padding: 25px 75px;
+                margin: 0 50px;
+                border: 1px solid #dcdcdc;
+                border-radius: 5px;
+            }
+            
+            .buttons:hover{
+                background-color: #cfcfcf;
+                color: #111111;
+                cursor: pointer;
+            }
+            
+            img{
+                height: 4.5%;
+            }
+            
+            #buttons{
+                margin-top: 2%;
+            }
+            
+            hr{
+                width: 100%;
+            }
+            
+            #yes, #no{
+                display: none;
+                flex-direction: column;
+                align-items: left;
+                justify-content: center;
+            }
+            
+            #yes{
+                padding: 7.5%;
+            }
+            
+            #no{
+                padding: 15%;
+            }
+            
+            .home{
+                text-align: right;
+                text-decoration: underline;
+            }
+            
+            a{
+                color: #dcdcdc;
+            }
+            
+            #no p{
+                margin-bottom: 7.5%;
+            }
+            
+            #no div{
+                text-align: center;
+            }
+            
+            #no .buttons{
+                margin: 0;
+                text-decoration: none;
+                padding: 15px 75px;
+                font-size: 2em;
+            }
+        
+        </style>
+
+    </head>
+    
+    <body>
+        
+        <div id="card">
+            <img src="photos/syringe.png">
+            <h1>Are you willing to be vaccinated?</h1>
+            
+            <div id="buttons">
+                <a class="buttons" onclick="showYes()">Of course!</a>
+                <a class="buttons" onclick="showNo()">Not Really...</a>
+            </div>
+
+        </div>
+        
+        <div id="yes">
+            <h2>Great, our work is done.</h2>
+
+            <p>Just kidding!</p>
+            
+            <p>Even if you’re willing to get vaccinated, there are still a lot of people that need some persuasion. Based on <a href="https://www.rappler.com/nation/filipinos-vaccination-against-coronavirus-pulse-asia-survey-march-2021">a survey conducted by Pulse Asia</a>, 6 out of 10 Filipinos don’t want to get vaccinated against COVID-19. Let’s look at the bigger picture. There are about 109 million people in the Philippines. This means about 65.4 million don’t want to get vaccinated. That’s a really large number, and it might seem difficult to persuade these people; but here are some things to keep in mind.</p>
+
+            <p>Try sharing your own stories about your own vaccination experiences. Social media is a very powerful tool right now, so leverage that. You can also try connecting them to professionals or other COVID patients. Most importantly, let people explain their side first. Allow them to share why they are hesitant to get vaccinated. Don’t belittle their decisions just because theirs are different from yours. Listen to them before explaining or correcting the false information they’ve learned, if there are any.</p>
+
+            <p>You can share this site with them too. We hope this helped you and will help other people get vaccinated as soon as possible. Let’s not only hope but also work together for our future and for the future of our country.</p>
+            
+            <br><a class="home" href="index.html">Back to Home ></a>
+            
+        </div>
+        
+        <div id="no">
+            
+            <h2>Lorem ipsum, something here...</h2>
+            
+            <p>We might have different opinions. But we want you to remember that asking questions and being curious about the vaccine is very legitimate. We hope to help address these concerns too. Allow us to show some experiences people had with and without the vaccine.</p>
+            
+             <div><a class="buttons alright" href="questions.html">Alright!</a></div>
+        </div>
+        
+        <script>
+            let vh = window.innerHeight*0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+            
+            function showYes(){
+                var x = document.getElementById("card");
+                var y = document.getElementById("yes");
+                x.style.display = "none";
+                y.style.display = "flex";
+            }
+            
+            function showNo(){
+                var x = document.getElementById("card");
+                var y = document.getElementById("no");
+                x.style.display = "none";
+                y.style.display = "flex";
+            }
+        </script>
+        
+    </body>
+    
+</html>
